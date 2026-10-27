@@ -237,31 +237,7 @@ export default function ProductPage() {
                 {/* Product Title + Compact Countdown Row */}
                 <div className="pi__title-row">
                   <h1 id="product-heading" className="pi__title">Magnetic Work Light</h1>
-                  
-                  {/* Compact Countdown Aligned Horizontally */}
-                  <div
-                    className="compact-countdown"
-                    aria-live="polite"
-                    aria-label={`Sale ends in ${time.h} hours ${time.m} minutes ${time.s} seconds`}
-                  >
-                    <span className="compact-cd__label">SALE ENDS IN</span>
-                    <div className="compact-cd__boxes">
-                      <div className="compact-cd__box">
-                        <span className="compact-cd__num">{time.h}</span>
-                        <span className="compact-cd__lbl">HRS</span>
-                      </div>
-                      <span className="compact-cd__sep">:</span>
-                      <div className="compact-cd__box">
-                        <span className="compact-cd__num">{time.m}</span>
-                        <span className="compact-cd__lbl">MINS</span>
-                      </div>
-                      <span className="compact-cd__sep">:</span>
-                      <div className="compact-cd__box">
-                        <span className="compact-cd__num">{time.s}</span>
-                        <span className="compact-cd__lbl">SECS</span>
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
 
                 {/* Price Row (30% OFF) */}
