@@ -426,21 +426,21 @@ export default function ProductPage() {
                 <div className="job-benefit">
                   <div className="job-benefit__header">
                     <div className="job-benefit__icon" aria-hidden="true">
-                      <svg viewBox="0 0 54 44" fill="none" stroke="#FFB800" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="46" height="38">
+                      <svg viewBox="0 0 54 44" fill="none" stroke="#FFE600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="46" height="38">
                         <line x1="12" y1="4" x2="12" y2="6" strokeWidth="2" />
                         <line x1="20" y1="3" x2="20" y2="5" strokeWidth="2" />
                         <line x1="27" y1="2" x2="27" y2="5" strokeWidth="2" />
                         <line x1="34" y1="3" x2="34" y2="5" strokeWidth="2" />
                         <line x1="42" y1="4" x2="42" y2="6" strokeWidth="2" />
-                        <rect x="8" y="9" width="38" height="26" rx="4" stroke="#FFB800" strokeWidth="2" />
-                        <circle cx="16" cy="18" r="1.5" fill="#FFB800" />
-                        <circle cx="23" cy="18" r="1.5" fill="#FFB800" />
-                        <circle cx="31" cy="18" r="1.5" fill="#FFB800" />
-                        <circle cx="38" cy="18" r="1.5" fill="#FFB800" />
-                        <circle cx="16" cy="26" r="1.5" fill="#FFB800" />
-                        <circle cx="23" cy="26" r="1.5" fill="#FFB800" />
-                        <circle cx="31" cy="26" r="1.5" fill="#FFB800" />
-                        <circle cx="38" cy="26" r="1.5" fill="#FFB800" />
+                        <rect x="8" y="9" width="38" height="26" rx="4" stroke="#FFE600" strokeWidth="2" />
+                        <circle cx="16" cy="18" r="1.5" fill="#FFE600" />
+                        <circle cx="23" cy="18" r="1.5" fill="#FFE600" />
+                        <circle cx="31" cy="18" r="1.5" fill="#FFE600" />
+                        <circle cx="38" cy="18" r="1.5" fill="#FFE600" />
+                        <circle cx="16" cy="26" r="1.5" fill="#FFE600" />
+                        <circle cx="23" cy="26" r="1.5" fill="#FFE600" />
+                        <circle cx="31" cy="26" r="1.5" fill="#FFE600" />
+                        <circle cx="38" cy="26" r="1.5" fill="#FFE600" />
                         <line x1="3" y1="22" x2="5" y2="22" strokeWidth="2" />
                         <line x1="49" y1="22" x2="51" y2="22" strokeWidth="2" />
                         <line x1="16" y1="39" x2="16" y2="41" strokeWidth="2" />
@@ -458,12 +458,12 @@ export default function ProductPage() {
                 <div className="job-benefit">
                   <div className="job-benefit__header">
                     <div className="job-benefit__icon" aria-hidden="true">
-                      <svg viewBox="0 0 54 44" fill="none" stroke="#FFB800" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="46" height="38">
-                        <rect x="6" y="8" width="42" height="28" rx="5" stroke="#FFB800" strokeWidth="2.2" />
-                        <line x1="14" y1="22" x2="22" y2="22" strokeWidth="2.5" stroke="#FFB800" />
-                        <line x1="28" y1="22" x2="34" y2="22" strokeWidth="2.5" stroke="#FFB800" />
-                        <circle cx="39" cy="15" r="1.5" fill="#FFB800" />
-                        <line x1="14" y1="15" x2="26" y2="15" strokeWidth="1.8" stroke="#FFB800" />
+                      <svg viewBox="0 0 54 44" fill="none" stroke="#FFE600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="46" height="38">
+                        <rect x="6" y="8" width="42" height="28" rx="5" stroke="#FFE600" strokeWidth="2.2" />
+                        <line x1="14" y1="22" x2="22" y2="22" strokeWidth="2.5" stroke="#FFE600" />
+                        <line x1="28" y1="22" x2="34" y2="22" strokeWidth="2.5" stroke="#FFE600" />
+                        <circle cx="39" cy="15" r="1.5" fill="#FFE600" />
+                        <line x1="14" y1="15" x2="26" y2="15" strokeWidth="1.8" stroke="#FFE600" />
                       </svg>
                     </div>
                     <h3 className="job-benefit__title">Digital Battery Display</h3>
@@ -499,11 +499,11 @@ export default function ProductPage() {
                 <div className="job-benefit">
                   <div className="job-benefit__header">
                     <div className="job-benefit__icon" aria-hidden="true">
-                      <svg viewBox="0 0 48 48" fill="none" stroke="#FFB800" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" width="44" height="44">
-                        <circle cx="24" cy="24" r="20" stroke="#FFB800" strokeWidth="2.2" strokeDasharray="30 8 30 8" />
-                        <path d="M21 4L24 1L27 4" stroke="#FFB800" strokeWidth="2.2" />
-                        <path d="M27 44L24 47L21 44" stroke="#FFB800" strokeWidth="2.2" />
-                        <text x="24" y="29" fill="#FFB800" fontSize="13" fontWeight="900" fontFamily="Poppins, sans-serif" textAnchor="middle" stroke="none">360°</text>
+                      <svg viewBox="0 0 48 48" fill="none" stroke="#FFE600" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" width="44" height="44">
+                        <circle cx="24" cy="24" r="20" stroke="#FFE600" strokeWidth="2.2" strokeDasharray="30 8 30 8" />
+                        <path d="M21 4L24 1L27 4" stroke="#FFE600" strokeWidth="2.2" />
+                        <path d="M27 44L24 47L21 44" stroke="#FFE600" strokeWidth="2.2" />
+                        <text x="24" y="29" fill="#FFE600" fontSize="13" fontWeight="900" fontFamily="Poppins, sans-serif" textAnchor="middle" stroke="none">360°</text>
                       </svg>
                     </div>
                     <h3 className="job-benefit__title">360° Rotating Design</h3>
@@ -516,13 +516,13 @@ export default function ProductPage() {
                 <div className="job-benefit">
                   <div className="job-benefit__header">
                     <div className="job-benefit__icon" aria-hidden="true">
-                      <svg viewBox="0 0 48 48" fill="none" stroke="#FFB800" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" width="44" height="44">
-                        <circle cx="24" cy="24" r="20" stroke="#FFB800" strokeWidth="2.2" />
+                      <svg viewBox="0 0 48 48" fill="none" stroke="#FFE600" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" width="44" height="44">
+                        <circle cx="24" cy="24" r="20" stroke="#FFE600" strokeWidth="2.2" />
                         <line x1="18" y1="15" x2="18" y2="19" strokeWidth="2.4" />
                         <line x1="30" y1="15" x2="30" y2="19" strokeWidth="2.4" />
                         <rect x="15" y="19" width="18" height="11" rx="3" strokeWidth="2.2" />
                         <line x1="24" y1="30" x2="24" y2="34" strokeWidth="2.4" />
-                        <line x1="10" y1="38" x2="38" y2="10" stroke="#FFB800" strokeWidth="2.5" />
+                        <line x1="10" y1="38" x2="38" y2="10" stroke="#FFE600" strokeWidth="2.5" />
                       </svg>
                     </div>
                     <h3 className="job-benefit__title">Cordless Use</h3>
