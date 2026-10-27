@@ -10,11 +10,8 @@ export default function AnnouncementBar() {
         <div className="ann-bar__promo">
           <span className="ann-promo-badge">
             <span className="ann-promo-tag">30% OFF</span>
-            <span className="ann-promo-text">LIMITED TIME SALE</span>
           </span>
         </div>
-
-        <span className="ann-bar__bullet" aria-hidden="true">•</span>
 
         {/* Countdown Timer */}
         <div className="ann-bar__timer">

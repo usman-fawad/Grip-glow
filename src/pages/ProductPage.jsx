@@ -236,7 +236,7 @@ export default function ProductPage() {
 
                 {/* Product Title + Compact Countdown Row */}
                 <div className="pi__title-row">
-                  <h1 id="product-heading" className="pi__title">THE GRIP GLOW</h1>
+                  <h1 id="product-heading" className="pi__title">Magnetic Work Light</h1>
                   
                   {/* Compact Countdown Aligned Horizontally */}
                   <div
@@ -284,7 +284,7 @@ export default function ProductPage() {
                   <div className="pi__delivery-content">
                     <span className="pi__delivery-headline">{deliveryHeadline}</span>
                     <span className="pi__delivery-destination">
-                      to {selectedCountry.name} ({selectedCountry.code}) • Tracked & Insured
+                      to {selectedCountry.name} • Tracked & Insured
                     </span>
                   </div>
                 </div>
