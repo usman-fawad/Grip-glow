@@ -1157,6 +1157,87 @@ ul, ol { list-style: none; }
   letter-spacing: .04em;
 }
 
+/* Product Colour Selector */
+.pi__color-selector {
+  margin: 6px 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pi__color-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .88rem;
+}
+.pi__color-label {
+  font-weight: 700;
+  color: #94a3b8;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.pi__color-name {
+  font-weight: 800;
+  color: #ffffff;
+  font-size: .9rem;
+}
+.pi__color-swatches {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pi__color-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 2px;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.pi__color-btn:hover {
+  transform: scale(1.1);
+  border-color: rgba(255, 230, 0, 0.5);
+}
+.pi__color-btn.active {
+  border-color: var(--yellow, #FFE600);
+  box-shadow: 0 0 10px rgba(255, 230, 0, 0.35);
+  transform: scale(1.08);
+}
+.pi__color-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: block;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+.pi__color-circle--green {
+  background: #74d600;
+}
+.pi__color-circle--red {
+  background: #e52b2b;
+}
+.pi__color-circle--yellow {
+  background: #FFE600;
+}
+
+[data-theme="light"] .pi__color-label {
+  color: #64748b !important;
+}
+[data-theme="light"] .pi__color-name {
+  color: #0f172a !important;
+}
+[data-theme="light"] .pi__color-btn.active {
+  border-color: #0f172a !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2) !important;
+}
+
 /* Country-based delivery text badge */
 .pi__delivery-highlight {
   display: flex;

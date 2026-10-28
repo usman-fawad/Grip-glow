@@ -12,13 +12,22 @@ const BUNDLES = [
 ];
 
 const GALLERY = [
-  { src: '/work light 1.png', alt: 'The Grip Glow Magnetic Work Light - Overview' },
+  { src: '/All colours Light for Work.png', alt: 'The Grip Glow Magnetic Work Light - All Colours' },
+  { src: '/Green Work Light.png', alt: 'The Grip Glow Magnetic Work Light - Green Edition', color: 'Green' },
   { src: '/work light 2.png', alt: 'The Grip Glow Magnetic Work Light - High-Power COB Light' },
   { src: '/work light 3.png', alt: 'The Grip Glow Magnetic Work Light - Dual 360° Magnetic Swivel Base' },
   { src: '/work light 4.png', alt: 'The Grip Glow Magnetic Work Light - Engine Bay Mount' },
   { src: '/work light 5.png', alt: 'The Grip Glow Magnetic Work Light - Under-Car & Chassis Mount' },
   { src: '/work light 6.png', alt: 'The Grip Glow Magnetic Work Light - USB-C Rechargeable Battery' },
   { src: '/work light 7.png', alt: 'The Grip Glow Magnetic Work Light - Rugged Water-Resistant Design' },
+  { src: '/Red LED Work Light .png', alt: 'The Grip Glow Magnetic Work Light - Red Edition', color: 'Red' },
+  { src: '/Yellow Work Light.png', alt: 'The Grip Glow Magnetic Work Light - Yellow Edition', color: 'Yellow' },
+];
+
+const COLOR_OPTIONS = [
+  { name: 'Green', hex: '#74d600', imgIndex: 1 },
+  { name: 'Red', hex: '#e52b2b', imgIndex: 8 },
+  { name: 'Yellow', hex: '#FFE600', imgIndex: 9 },
 ];
 
 const FAQ_ITEMS = [
@@ -42,6 +51,7 @@ function getDeliveryDates() {
 export default function ProductPage() {
   const [activeImg, setActiveImg] = useState(0);
   const [activeBundle, setActiveBundle] = useState(0);
+  const [selectedColor, setSelectedColor] = useState('Green');
   const [added, setAdded] = useState(false);
   const thumbsRef = useRef(null);
   const videoRef = useRef(null);
@@ -53,6 +63,19 @@ export default function ProductPage() {
   useEffect(() => {
     document.title = 'The Grip Glow — Magnetic LED Work Light | GRIP GLOW';
   }, []);
+
+  // Synchronize colour when active image changes to a colour edition
+  useEffect(() => {
+    const current = GALLERY[activeImg];
+    if (current && current.color) {
+      setSelectedColor(current.color);
+    }
+  }, [activeImg]);
+
+  const handleColorSelect = (opt) => {
+    setSelectedColor(opt.name);
+    setActiveImg(opt.imgIndex);
+  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -119,8 +142,14 @@ export default function ProductPage() {
 
   const handleAddToCart = () => {
     const b = BUNDLES[activeBundle];
+    const colorOpt = COLOR_OPTIONS.find(c => c.name === selectedColor) || COLOR_OPTIONS[0];
     addItem(
-      { id: `gripglow-${b.qty}`, name: `The Grip Glow (×${b.qty})`, price: b.price, img: GALLERY[0].src },
+      {
+        id: `gripglow-${b.qty}-${selectedColor.toLowerCase()}`,
+        name: `The Grip Glow (${selectedColor}) ×${b.qty}`,
+        price: b.price,
+        img: GALLERY[colorOpt.imgIndex].src
+      },
       1
     );
     setAdded(true);
@@ -245,6 +274,33 @@ export default function ProductPage() {
                   <span className="pi__price-cur">$87.00 AUD</span>
                   <span className="pi__price-orig">$174.00 AUD</span>
                   <span className="pi__sale-pill">SALE 30% OFF</span>
+                </div>
+
+                {/* Colour Option Swatches */}
+                <div className="pi__color-selector" aria-label="Colour Options">
+                  <div className="pi__color-header">
+                    <span className="pi__color-label">Colour:</span>
+                    <span className="pi__color-name">{selectedColor}</span>
+                  </div>
+                  <div className="pi__color-swatches" role="radiogroup" aria-label="Select product colour">
+                    {COLOR_OPTIONS.map((opt) => (
+                      <button
+                        key={opt.name}
+                        type="button"
+                        className={`pi__color-btn${selectedColor === opt.name ? ' active' : ''}`}
+                        onClick={() => handleColorSelect(opt)}
+                        aria-label={`Select ${opt.name} colour`}
+                        aria-checked={selectedColor === opt.name}
+                        role="radio"
+                        title={opt.name}
+                      >
+                        <span
+                          className={`pi__color-circle pi__color-circle--${opt.name.toLowerCase()}`}
+                          style={{ background: opt.hex }}
+                        />
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Country-Based Delivery Text Badge */}
