@@ -14,6 +14,7 @@ const BUNDLES = [
 const GALLERY = [
   { src: '/All colours Light for Work.png', alt: 'The Grip Glow Magnetic Work Light - All Colours' },
   { src: '/Green Work Light.png', alt: 'The Grip Glow Magnetic Work Light - Green Edition', color: 'Green' },
+  { src: '/Gif.mp4', alt: 'The Grip Glow Magnetic Work Light - In Action Demo', isVideo: true },
   { src: '/work light 2.png', alt: 'The Grip Glow Magnetic Work Light - High-Power COB Light' },
   { src: '/work light 3.png', alt: 'The Grip Glow Magnetic Work Light - Dual 360° Magnetic Swivel Base' },
   { src: '/work light 4.png', alt: 'The Grip Glow Magnetic Work Light - Engine Bay Mount' },
@@ -26,8 +27,8 @@ const GALLERY = [
 
 const COLOR_OPTIONS = [
   { name: 'Green', hex: '#74d600', imgIndex: 1 },
-  { name: 'Red', hex: '#e52b2b', imgIndex: 8 },
-  { name: 'Yellow', hex: '#FFE600', imgIndex: 9 },
+  { name: 'Red', hex: '#e52b2b', imgIndex: 9 },
+  { name: 'Yellow', hex: '#FFE600', imgIndex: 10 },
 ];
 
 const FAQ_ITEMS = [
@@ -193,11 +194,25 @@ export default function ProductPage() {
                     </svg>
                   </button>
 
-                  <img
-                    src={GALLERY[activeImg].src}
-                    alt={GALLERY[activeImg].alt}
-                    className="gallery__main-img"
-                  />
+                  {GALLERY[activeImg].isVideo ? (
+                    <video
+                      key={GALLERY[activeImg].src}
+                      src={GALLERY[activeImg].src}
+                      className="gallery__main-img gallery__main-video"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      aria-label={GALLERY[activeImg].alt}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', pointerEvents: 'none' }}
+                    />
+                  ) : (
+                    <img
+                      src={GALLERY[activeImg].src}
+                      alt={GALLERY[activeImg].alt}
+                      className="gallery__main-img"
+                    />
+                  )}
 
                   <button
                     type="button"
@@ -218,27 +233,81 @@ export default function ProductPage() {
 
                 <div className="gallery__thumbs" role="list" ref={thumbsRef}>
                   {GALLERY.map((img, i) => (
-                    <img
-                      key={i}
-                      src={img.src}
-                      alt={img.alt}
-                      className={`gallery__thumb${activeImg === i ? ' active' : ''}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setActiveImg(i);
-                      }}
-                      onMouseDown={(e) => e.preventDefault()}
-                      onKeyDown={e => {
-                        if (e.key === 'Enter' || e.key === ' ') {
+                    img.isVideo ? (
+                      <div
+                        key={i}
+                        className="gallery__thumb-wrapper"
+                        style={{ position: 'relative', display: 'inline-flex', flexShrink: 0 }}
+                        onClick={(e) => {
                           e.preventDefault();
                           setActiveImg(i);
-                        }
-                      }}
-                      role="listitem"
-                      tabIndex={0}
-                      aria-label={`View image ${i + 1}: ${img.alt}`}
-                      aria-current={activeImg === i}
-                    />
+                        }}
+                      >
+                        <video
+                          src={img.src}
+                          muted
+                          loop
+                          autoPlay
+                          playsInline
+                          className={`gallery__thumb${activeImg === i ? ' active' : ''}`}
+                          style={{ objectFit: 'cover' }}
+                          role="listitem"
+                          tabIndex={0}
+                          aria-label={`View demonstration video ${i + 1}: ${img.alt}`}
+                          aria-current={activeImg === i}
+                          onMouseDown={(e) => e.preventDefault()}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                              e.preventDefault();
+                              setActiveImg(i);
+                            }
+                          }}
+                        />
+                        <span
+                          className="gallery__thumb-badge"
+                          aria-hidden="true"
+                          style={{
+                            position: 'absolute',
+                            bottom: 4,
+                            right: 4,
+                            background: 'rgba(0, 0, 0, 0.75)',
+                            borderRadius: '50%',
+                            width: 18,
+                            height: 18,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            pointerEvents: 'none',
+                          }}
+                        >
+                          <svg viewBox="0 0 24 24" fill="#FFE600" width="10" height="10">
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                          </svg>
+                        </span>
+                      </div>
+                    ) : (
+                      <img
+                        key={i}
+                        src={img.src}
+                        alt={img.alt}
+                        className={`gallery__thumb${activeImg === i ? ' active' : ''}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setActiveImg(i);
+                        }}
+                        onMouseDown={(e) => e.preventDefault()}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            setActiveImg(i);
+                          }
+                        }}
+                        role="listitem"
+                        tabIndex={0}
+                        aria-label={`View image ${i + 1}: ${img.alt}`}
+                        aria-current={activeImg === i}
+                      />
+                    )
                   ))}
                 </div>
               </div>
