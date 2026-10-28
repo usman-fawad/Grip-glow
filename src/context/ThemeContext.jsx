@@ -14,6 +14,7 @@ export function ThemeProvider({ children }) {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    if (document.body) document.body.setAttribute('data-theme', theme);
     try {
       localStorage.setItem('gripglow_theme', theme);
     } catch {}
