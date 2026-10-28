@@ -29,17 +29,29 @@
    RESET & BASE
    ============================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 body {
   font-family: 'Poppins', sans-serif;
   background: #0b0c0f;
   color: #ffffff;
   line-height: 1.65;
   overflow-x: hidden;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 a { text-decoration: none; color: inherit; }
-button, input, textarea, select { font-family: inherit; }
-img { max-width: 100%; display: block; }
+button, input, textarea, select {
+  font-family: inherit;
+  touch-action: manipulation;
+}
+img, video, canvas, svg {
+  max-width: 100%;
+}
 ul, ol { list-style: none; }
 
 /* ============================
@@ -1817,7 +1829,7 @@ textarea.contact-input {
     top: 100%;
     left: 0;
     right: 0;
-    background: #ffffff;
+    background: #0d0f12;
     padding: 16px 20px 24px;
     gap: 4px;
     border-bottom: 2px solid var(--green);
@@ -2543,8 +2555,9 @@ textarea.contact-input {
 /* ── SMALL SCREENS (<= 480px) ── */
 @media (max-width: 480px) {
   .cart-drawer {
-    width: 100vw;
-    right: -100vw;
+    width: 100%;
+    max-width: 100vw;
+    right: -100%;
   }
   .cart-drawer.open {
     right: 0;
@@ -2611,7 +2624,9 @@ textarea.contact-input {
     font-size: 0.74rem;
   }
   .gallery__main {
-    height: 250px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    max-height: none;
   }
   .gallery__thumb {
     width: 52px;
@@ -2624,6 +2639,10 @@ textarea.contact-input {
   .compact-countdown {
     padding: 3px 6px;
     gap: 5px;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
   .compact-cd__label {
     font-size: 0.62rem;
