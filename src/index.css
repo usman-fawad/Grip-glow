@@ -248,7 +248,7 @@ ul, ol { list-style: none; }
 .logo .logo-glow,
 .logo-glow {
   color: var(--yellow, #FFE600) !important;
-  text-shadow: 0 0 14px rgba(255, 230, 0, 0.45);
+  text-shadow: none !important;
 }
 
 .footer__logo {
@@ -268,7 +268,7 @@ ul, ol { list-style: none; }
 .footer__logo span:last-child,
 .footer__logo .logo-glow {
   color: var(--yellow, #FFE600) !important;
-  text-shadow: 0 0 14px rgba(255, 230, 0, 0.45);
+  text-shadow: none !important;
 }
 
 .nav {
@@ -2602,29 +2602,28 @@ textarea.contact-input {
    ========================================== */
 .theme-toggle-btn {
   background: rgba(255, 255, 255, 0.08);
-  border: 1.5px solid rgba(255, 230, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: #FFE600;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
   padding: 0;
   flex-shrink: 0;
 }
 .theme-toggle-btn:hover {
-  background: rgba(255, 230, 0, 0.2);
-  border-color: #FFE600;
-  transform: rotate(15deg) scale(1.08);
-  box-shadow: 0 0 16px rgba(255, 230, 0, 0.45);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 230, 0, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(255, 230, 0, 0.25);
 }
 .theme-toggle-btn svg {
   display: block;
-  color: #FFE600;
-  stroke: #FFE600;
+  pointer-events: none;
 }
 
 /* ==========================================
@@ -2664,7 +2663,7 @@ textarea.contact-input {
 [data-theme="light"] .footer-logo-lit,
 [data-theme="light"] .logo-glow {
   color: var(--yellow, #FFE600) !important;
-  text-shadow: 0 0 12px rgba(255, 230, 0, 0.35);
+  text-shadow: none !important;
 }
 [data-theme="light"] .nav__link,
 [data-theme="light"] .nav-link {
@@ -2685,19 +2684,21 @@ textarea.contact-input {
   color: #0f172a !important;
 }
 [data-theme="light"] .theme-toggle-btn {
-  background: rgba(0, 0, 0, 0.05);
-  border: 1.5px solid rgba(255, 230, 0, 0.6);
-  color: #FFE600 !important;
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #b45309 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
 }
 [data-theme="light"] .theme-toggle-btn:hover {
-  background: rgba(255, 230, 0, 0.22);
-  border-color: #FFE600;
-  color: #FFE600 !important;
-  box-shadow: 0 0 16px rgba(255, 230, 0, 0.45);
+  background: #e2e8f0 !important;
+  border-color: #94a3b8 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+  transform: scale(1.05);
 }
 [data-theme="light"] .theme-toggle-btn svg {
-  color: #FFE600 !important;
-  stroke: #FFE600 !important;
+  color: #b45309 !important;
+  stroke: #b45309 !important;
+  fill: #f59e0b !important;
 }
 [data-theme="light"] .hamburger span,
 [data-theme="light"] .nav-toggle span {
@@ -2719,7 +2720,12 @@ textarea.contact-input {
 /* Light Home Hero Section */
 [data-theme="light"] .hero {
   background: #ffffff !important;
+  background-image: none !important;
   color: #0f172a !important;
+}
+[data-theme="light"] .hero__overlay {
+  display: none !important;
+  opacity: 0 !important;
 }
 [data-theme="light"] .hero__heading,
 [data-theme="light"] .hero__title {
@@ -2727,16 +2733,24 @@ textarea.contact-input {
 }
 [data-theme="light"] .hero__sub,
 [data-theme="light"] .hero__subtitle {
-  color: #475569 !important;
+  color: #334155 !important;
+  font-weight: 500 !important;
 }
-[data-theme="light"] .hero__rating {
+[data-theme="light"] .hero__rating,
+[data-theme="light"] .hero__rating span:last-child {
   color: #475569 !important;
+  font-weight: 600 !important;
+}
+[data-theme="light"] .hero__stars {
+  color: #eab308 !important;
 }
 [data-theme="light"] .hero__guarantee {
-  color: #475569 !important;
+  color: #334155 !important;
+  font-weight: 600 !important;
 }
 [data-theme="light"] .hero__guarantee svg {
-  color: #475569 !important;
+  color: #334155 !important;
+  fill: currentColor !important;
 }
 
 /* Light Publications Banner */
@@ -3119,7 +3133,6 @@ textarea.contact-input {
 [data-theme="light"] .atc-btn,
 [data-theme="light"] .nl-btn,
 [data-theme="light"] .scroll-top,
-[data-theme="light"] .ann-promo-badge,
 [data-theme="light"] .product-badge-pill,
 [data-theme="light"] .badge--save,
 [data-theme="light"] .badge--yellow {
@@ -3133,3 +3146,22 @@ textarea.contact-input {
   color: #111111 !important;
   stroke: #111111 !important;
 }
+
+/* Announcement Bar Promo Badge (must always be high-contrast black pill with yellow tag) */
+.ann-promo-badge,
+[data-theme="light"] .ann-promo-badge {
+  background: #111111 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+}
+.ann-promo-tag,
+[data-theme="light"] .ann-promo-tag {
+  color: var(--yellow, #FFE600) !important;
+  font-weight: 900 !important;
+}
+.ann-promo-text,
+[data-theme="light"] .ann-promo-text {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
