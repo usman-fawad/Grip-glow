@@ -2589,3 +2589,399 @@ textarea.contact-input {
     bottom: 12px;
   }
 }
+
+/* ==========================================
+   LIGHT / DARK THEME TOGGLE BUTTON
+   ========================================== */
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #FFE600;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  flex-shrink: 0;
+}
+.theme-toggle-btn:hover {
+  background: rgba(255, 230, 0, 0.18);
+  border-color: #FFE600;
+  transform: rotate(15deg) scale(1.08);
+  box-shadow: 0 0 14px rgba(255, 230, 0, 0.35);
+}
+.theme-toggle-btn svg {
+  display: block;
+}
+
+/* ==========================================
+   LIGHT THEME DESIGN SYSTEM
+   ========================================== */
+[data-theme="light"] body {
+  background: #f8fafc;
+  color: #0f172a;
+}
+[data-theme="light"] a {
+  color: inherit;
+}
+
+/* Light Header */
+[data-theme="light"] .header {
+  background: #ffffff;
+  border-bottom: 1.5px solid var(--yellow, #FFE600);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+[data-theme="light"] .logo .logo-grip,
+[data-theme="light"] .logo span:first-child {
+  color: #0f172a;
+}
+[data-theme="light"] .nav__link,
+[data-theme="light"] .nav-link {
+  color: #475569;
+}
+[data-theme="light"] .nav__link:hover,
+[data-theme="light"] .nav-link:hover {
+  color: #0f172a;
+  background: rgba(0, 0, 0, 0.05);
+}
+[data-theme="light"] .nav__link.active,
+[data-theme="light"] .nav-link--active {
+  background: var(--yellow, #FFE600);
+  color: #111111 !important;
+  font-weight: 800;
+}
+[data-theme="light"] .cart-btn {
+  color: #0f172a;
+}
+[data-theme="light"] .theme-toggle-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #d97706;
+}
+[data-theme="light"] .theme-toggle-btn:hover {
+  background: rgba(255, 230, 0, 0.2);
+  border-color: #d97706;
+  color: #b45309;
+}
+[data-theme="light"] .hamburger span,
+[data-theme="light"] .nav-toggle span {
+  background: #0f172a;
+}
+@media (max-width: 900px) {
+  [data-theme="light"] .nav {
+    background: #ffffff;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Light Product Page */
+[data-theme="light"] .product-page {
+  background: #f8fafc;
+  color: #0f172a;
+}
+[data-theme="light"] .breadcrumb {
+  color: #64748b;
+}
+[data-theme="light"] .gallery__main,
+[data-theme="light"] .gallery-main {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+[data-theme="light"] .gallery__thumb,
+[data-theme="light"] .gallery-thumb {
+  background: #ffffff;
+  border-color: #e2e8f0;
+}
+[data-theme="light"] .gallery__thumb.active,
+[data-theme="light"] .gallery-thumb.active {
+  border-color: var(--yellow, #FFE600);
+}
+[data-theme="light"] .gallery__nav-btn,
+[data-theme="light"] .gallery-nav-btn {
+  background: rgba(255, 255, 255, 0.85);
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+}
+[data-theme="light"] .pi__title,
+[data-theme="light"] .product-title-lg {
+  color: #0f172a;
+}
+[data-theme="light"] .pi__price-cur,
+[data-theme="light"] .price-lg {
+  color: #0f172a;
+}
+[data-theme="light"] .pi__price-orig,
+[data-theme="light"] .price-strike {
+  color: #94a3b8;
+}
+[data-theme="light"] .pi__desc,
+[data-theme="light"] .product-short-desc {
+  color: #475569;
+}
+[data-theme="light"] .pi__feature-pill,
+[data-theme="light"] .feature-pill {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+[data-theme="light"] .pi__bundle-title,
+[data-theme="light"] .qty-label {
+  color: #0f172a;
+}
+[data-theme="light"] .pi__bundle-card,
+[data-theme="light"] .qty-option {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+[data-theme="light"] .pi__bundle-card.active,
+[data-theme="light"] .qty-option.active {
+  border-color: var(--yellow, #FFE600);
+  background: rgba(255, 230, 0, 0.08);
+}
+[data-theme="light"] .pi__bundle-name,
+[data-theme="light"] .qty-option .qty-num {
+  color: #0f172a;
+}
+[data-theme="light"] .pi__delivery-highlight,
+[data-theme="light"] .delivery-highlight {
+  background: #ffffff;
+  border: 1.5px solid var(--yellow, #FFE600);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+[data-theme="light"] .pi__delivery-headline,
+[data-theme="light"] .delivery-headline {
+  color: #0f172a;
+}
+[data-theme="light"] .pi__delivery-destination,
+[data-theme="light"] .delivery-sub {
+  color: #475569;
+}
+[data-theme="light"] .pi__timeline,
+[data-theme="light"] .delivery-timeline {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+[data-theme="light"] .pi__timeline-step strong,
+[data-theme="light"] .delivery-step-date {
+  color: #0f172a;
+}
+[data-theme="light"] .pi__timeline-step span,
+[data-theme="light"] .delivery-step-label {
+  color: #64748b;
+}
+[data-theme="light"] .pi__guarantee,
+[data-theme="light"] .guarantee-row {
+  color: #64748b;
+}
+[data-theme="light"] .review-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+[data-theme="light"] .reviewer-name {
+  color: #0f172a;
+}
+[data-theme="light"] .review-text {
+  color: #475569;
+}
+
+/* Light Benefits Section */
+[data-theme="light"] .job-light-sec {
+  background: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+[data-theme="light"] .job-light-heading {
+  color: #0f172a;
+}
+[data-theme="light"] .job-light-sub {
+  color: #475569;
+}
+[data-theme="light"] .job-benefit-title {
+  color: #0f172a;
+}
+[data-theme="light"] .job-benefit-desc {
+  color: #475569;
+}
+
+/* Light FAQ & Trust */
+[data-theme="light"] .faq,
+[data-theme="light"] .faq-sec {
+  background: #ffffff;
+}
+[data-theme="light"] .faq-heading,
+[data-theme="light"] .sec-title {
+  color: #0f172a;
+}
+[data-theme="light"] .faq-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+[data-theme="light"] .faq-btn,
+[data-theme="light"] .faq-q {
+  color: #0f172a;
+}
+[data-theme="light"] .faq-answer,
+[data-theme="light"] .faq-a {
+  color: #475569;
+}
+[data-theme="light"] .trust-item h3 {
+  color: #0f172a;
+}
+[data-theme="light"] .trust-item p {
+  color: #64748b;
+}
+
+/* Light Home Hero & Product Card */
+[data-theme="light"] .hero {
+  background: #ffffff;
+}
+[data-theme="light"] .hero__title {
+  color: #0f172a;
+}
+[data-theme="light"] .hero__subtitle {
+  color: #475569;
+}
+[data-theme="light"] .pcard,
+[data-theme="light"] .featured-product {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+[data-theme="light"] .pcard__title {
+  color: #0f172a;
+}
+[data-theme="light"] .pcard__price-current {
+  color: #0f172a;
+}
+
+/* Light About, Contact, Track */
+[data-theme="light"] .about-page,
+[data-theme="light"] .inner-page,
+[data-theme="light"] .track-page {
+  background: #f8fafc;
+  color: #0f172a;
+}
+[data-theme="light"] .value-card,
+[data-theme="light"] .track-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+[data-theme="light"] .about-hero h1,
+[data-theme="light"] .about-story h2,
+[data-theme="light"] .about-values h2,
+[data-theme="light"] .contact-heading,
+[data-theme="light"] .track-card h1 {
+  color: #0f172a;
+}
+[data-theme="light"] .about-intro,
+[data-theme="light"] .about-story p,
+[data-theme="light"] .value-card p,
+[data-theme="light"] .track-label {
+  color: #475569;
+}
+[data-theme="light"] .contact-input,
+[data-theme="light"] .track-input {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+}
+[data-theme="light"] .contact-input:focus,
+[data-theme="light"] .track-input:focus {
+  border-color: var(--yellow, #FFE600);
+}
+
+/* Light Cart Drawer */
+[data-theme="light"] .cart-drawer,
+[data-theme="light"] .cart-sidebar {
+  background: #ffffff;
+  color: #0f172a;
+}
+[data-theme="light"] .cart-drawer__header,
+[data-theme="light"] .cart-header {
+  border-bottom: 1px solid #e2e8f0;
+}
+[data-theme="light"] .cart-drawer__title,
+[data-theme="light"] .cart-title {
+  color: #0f172a;
+}
+[data-theme="light"] .cart-drawer__close,
+[data-theme="light"] .cart-close {
+  color: #0f172a;
+}
+[data-theme="light"] .cart-item {
+  border-bottom: 1px solid #e2e8f0;
+}
+[data-theme="light"] .cart-item__name,
+[data-theme="light"] .cart-item-title {
+  color: #0f172a;
+}
+[data-theme="light"] .cart-drawer__footer,
+[data-theme="light"] .cart-footer {
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+[data-theme="light"] .cart-drawer__total span:first-child,
+[data-theme="light"] .cart-total span:first-child {
+  color: #475569;
+}
+[data-theme="light"] .cart-drawer__total span:last-child,
+[data-theme="light"] .cart-total span:last-child {
+  color: #0f172a;
+}
+
+/* Light Currency Dropdown */
+[data-theme="light"] .currency-btn {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .currency-dropdown {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+[data-theme="light"] .currency-dropdown li {
+  color: #0f172a;
+}
+[data-theme="light"] .currency-dropdown li:hover {
+  background: #f1f5f9;
+}
+
+/* Light Footer */
+[data-theme="light"] .footer {
+  background: #f1f5f9;
+  color: #475569;
+  border-top: 1px solid #e2e8f0;
+}
+[data-theme="light"] .footer__logo span:first-child,
+[data-theme="light"] .footer-logo .logo-grip {
+  color: #0f172a;
+}
+[data-theme="light"] .footer h4,
+[data-theme="light"] .footer__col h4 {
+  color: #0f172a;
+}
+[data-theme="light"] .footer-links a,
+[data-theme="light"] .footer__col a {
+  color: #475569;
+}
+[data-theme="light"] .footer-links a:hover,
+[data-theme="light"] .footer__col a:hover {
+  color: #0f172a;
+}
+[data-theme="light"] .footer-bottom,
+[data-theme="light"] .footer__bottom {
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+}

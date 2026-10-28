@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, ScrollRestoration } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
 import { CountdownProvider } from './context/CountdownContext';
 import { CountryProvider } from './context/CountryContext';
@@ -54,13 +55,15 @@ function Layout() {
 export default function App() {
   return (
     <BrowserRouter>
-      <CountryProvider>
-        <CountdownProvider>
-          <CartProvider>
-            <Layout />
-          </CartProvider>
-        </CountdownProvider>
-      </CountryProvider>
+      <ThemeProvider>
+        <CountryProvider>
+          <CountdownProvider>
+            <CartProvider>
+              <Layout />
+            </CartProvider>
+          </CountdownProvider>
+        </CountryProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
